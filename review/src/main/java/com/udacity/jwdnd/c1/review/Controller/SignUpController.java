@@ -33,10 +33,9 @@ public class SignUpController {
         logger.info("Received signup request. User name:" + user.getUsername());
         String signupError = null;
 
-        if(userService.isUsernameAvailable(user)){
+        if(!userService.isUsernameAvailable(user)){
             signupError = "Username already exists!";
         }
-
 
         if(signupError == null){
             int rowsAffected = userService.createUser(user);

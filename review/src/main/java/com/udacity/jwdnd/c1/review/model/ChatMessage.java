@@ -4,7 +4,6 @@ public class ChatMessage {
     private String messageid;
     private String username;
     private String messagetext;
-    private String messageType;
 
     public String getMessageid() {
         return messageid;
@@ -30,11 +29,5 @@ public class ChatMessage {
         this.messagetext = messageTxt;
     }
 
-    public String getMessageType() {
-        return messageType;
-    }
 
-    public void setMessageType(String messageType) {
-        this.messageType = messageType;
-    }
 }

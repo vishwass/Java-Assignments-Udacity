@@ -29,15 +29,7 @@ public class ChatController {
 
     @RequestMapping(value = {"/","/chat"}, method = RequestMethod.POST)
     public String addMessage(@ModelAttribute("chatForm") ChatForm chatForm, final BindingResult bindingResult, Model model){
-        String username = SecurityContextHolder.getContext().getAuthentication().getName();
-        if(username == null){
-            throw new UsernameNotFoundException("Username is null in security context.");
-        }
-        ChatMessage chatMessage = new ChatMessage();
-        chatMessage.setMessageTxt(chatForm.getMessageText());
-        chatMessage.setUsername(username);
-        chatMessage.setMessageType(chatForm.getMessageType());
-        this.messageService.addMessage(chatMessage);
+        this.messageService.addMessage(chatForm);
         model.addAttribute("chatMessages", messageService.getMessages());
         return "chat";
     }

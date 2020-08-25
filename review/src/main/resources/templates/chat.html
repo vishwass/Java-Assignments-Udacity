@@ -4,6 +4,9 @@
     <title> Chat Messenger</title>
 </head>
 <body>
+<form action="#" th:action = "@{/logout}" method="POST">
+    <button type="submit">Logout</button>
+</form>
 <p>Chat Messages:</p>
 <div>
     <div class="messages"  th:unless="${#lists.isEmpty(chatMessages)}">
