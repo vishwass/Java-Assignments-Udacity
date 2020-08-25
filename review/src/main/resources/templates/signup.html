@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+<form action="#" th:action = "@{/signup}" method="POST">
+    <div id="error-msg"  th:if="${signupError}">
+        <span th:text="${signupError}"></span>
+    </div>
+    <label for="firstname">Firstname: </label>
+    <input id="firstname" name="firstname" required>
+    <label for="lastname">Lastname: </label>
+    <input id="lastname" name="lastname" required>
+    <label for="inputUserName">Username:</label>
+    <input id="inputUsername" name="username" type="text" required>
+    <label for="inputPassword">Password: </label>
+    <input id="inputPassword" name="password" required>
+    <button type="submit">Signup</button>
+</form>
+<form action="#" th:action = "@{/login}" method="GET">
+    <button type="submit">Login</button>
+</form>
+</body>
+</html>

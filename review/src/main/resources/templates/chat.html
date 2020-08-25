@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title> Chat Messenger</title>
+</head>
 <body>
 <p>Chat Messages:</p>
 <div>
@@ -12,8 +15,6 @@
 <br/>
 <p>Add a new message:</p>
 <form action="#" th:action = "@{/chat}" th:object="${chatForm}" method="post">
-    <label for="username">Username:</label>
-    <input th:field="*{username}" id="username" type="text">
     <label for="messageText">Message Text:</label>
     <input th:field="*{messageText}" id="messageText" type="text">
     <label for="messageType">Message Type: </label>
