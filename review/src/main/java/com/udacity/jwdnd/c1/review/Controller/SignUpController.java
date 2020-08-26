@@ -30,7 +30,7 @@ public class SignUpController {
 
     @PostMapping()
     public String signupUser(@ModelAttribute User user, Model model){
-        logger.info("Received signup request");
+        logger.info("Received signup request.");
         String signupError = null;
 
         if(!userService.isUsernameAvailable(user)){
